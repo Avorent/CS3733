@@ -33,13 +33,13 @@ Group 6 is one of the groups with randomly assigned students from the course who
 Doug Selent has worked with Neil Heffernan and the ASSISTments online tutoring system. His research has primarily been focused on several aspects related to large scale experimentation in online tutoring systems. He has developed a machine-learning algorithm to learn the incorrect processes students make from the students answer and the inputs of the problem and conducted several randomized controlled experiments in the ASSISTments system using this information to help students learn from their mistakes.
 
 ### Current Members of Group 6
-###### Checkmarks show who have registered to this repository.
-- [x] [Alexander Antaya](https://github.com/aantaya1)
-- [x] [Josue Contreras](https://github.com/JosuContrer)
-- [x] [Daniel DiIorio](https://github.com/drd387)
-- [ ] [Robert Dutile](https://github.com/bdbooksrule)
-- [x] [Panhavuth Lau](https://github.com/Avorent)
-- [x] [Javier Marcos](https://github.com/XBC30EP450)
+###### Current teammates
+- [Alexander Antaya](https://github.com/aantaya1)
+- [Josue Contreras](https://github.com/JosuContrer)
+- [Daniel DiIorio](https://github.com/drd387)
+- [Robert Dutile](https://github.com/bdbooksrule)
+- [Panhavuth Lau](https://github.com/Avorent)
+- [Javier Marcos](https://github.com/XBC30EP450)
 
 #### Our team coach will be one of the course' teaching assistants:
 [Vanshaj Chowdhary](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
