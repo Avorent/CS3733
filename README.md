@@ -41,7 +41,7 @@ Doug Selent has worked with Neil Heffernan and the ASSISTments online tutoring s
 - [Panhavuth Lau](https://github.com/Avorent)
 - [Javier Marcos](https://github.com/XBC30EP450)
 
-#### Our team coach will be one of the course' teaching assistants:
+###### Team coach (TA)
 [Vanshaj Chowdhary](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 
 ***
