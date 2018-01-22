@@ -46,6 +46,14 @@ Jaglale, J. (2015). *Spring Cookbook*. Packt Publishing Ltd.
 Juba, S., Vannahme, A., & Volkov, A. (2015). *Learning PostgreSQL*. Packt Publishing Ltd.
 
 Bruegge, B., & Dutoit, A. H. (2004). *Object-Oriented Software Engineering Using UML, Patterns and Java-(Required)*(Vol. 2004). Prentice Hall.
+
+http://www.gwtproject.org/doc/latest/tutorial/index.htm
+
+https://git-scm.com/docs/gittutorial
+
+http://www.omg.org/spec/UML/2.5/PDF
+
+
 ***
 ## Miscellaneous
 
