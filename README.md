@@ -3,7 +3,7 @@
 ## Table of Contents
 ### [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
 ### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
-#### [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#)
+- [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#)
 ***
 # Introduction
 
