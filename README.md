@@ -2,7 +2,7 @@
 ***
 
 ## Table of Contents
-<details><summary>Click here to show</summary>
+<details><summary>Click here to expand</summary>
   
 - [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
   - [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
@@ -21,7 +21,9 @@ Welcome to the GitHub repository of the team Group 6 in the WPI course Software 
 This course is an introduction to Software Engineering. Students will work in teams ranging from four to six people to create a web application using current standard frameworks. The Java language will be used in this course and additional Java libraries related to web development. Over the course of this project students will experience the system design life cycle and cover several topics such as UML modeling, system architecture (layers), common design patterns, and full-stack development. This course will consist of six assignments related to the project (project deliverables), and a final exam on the concepts taught in the course.
 
 ### Teaching Instructor
-<p align="center"><img align="center" width="150" height="150" src="https://www.wpi.edu/sites/default/files/2017/09/28/dselent.jpg"></p> <p align="center">Computer Science Professor Douglas Selent</p>
+<p align="center"><img align="center" width="150" height="150" src="https://www.wpi.edu/sites/default/files/2017/09/28/dselent.jpg"></p>
+<p align="center"> Computer Science Professor Douglas Selent</p>
+Doug Selent has worked with Neil Heffernan and the ASSISTments online tutoring system. His research has primarily been focused on several aspects related to large scale experimentation in online tutoring systems. He has developed a machine-learning algorithm to learn the incorrect processes students make from the students answer and the inputs of the problem and conducted several randomized controlled experiments in the ASSISTments system using this information to help students learn from their mistakes.
 
 ### Current Members of Group 6
 ###### Checkmarks show who have registered to this repository.
@@ -36,9 +38,14 @@ This course is an introduction to Software Engineering. Students will work in te
 [Vanshaj Chowdhary](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 
 ***
-## References
+## Useful Resources
+Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1995). Design patterns: Elements of reusable software architecture. *Reading: Addison-Wesley*.
 
+Jaglale, J. (2015). *Spring Cookbook*. Packt Publishing Ltd.
 
+Juba, S., Vannahme, A., & Volkov, A. (2015). *Learning PostgreSQL*. Packt Publishing Ltd.
+
+Bruegge, B., & Dutoit, A. H. (2004). *Object-Oriented Software Engineering Using UML, Patterns and Java-(Required)*(Vol. 2004). Prentice Hall.
 ***
 ## Miscellaneous
 
@@ -47,7 +54,7 @@ Check out our team member's important messages to you all:
 
 #### Javier:
 > Tonto el que lo lea
-#### Josu:
+#### Josue:
 > hi again
-#### Dan:
+#### Daniel:
 > dan is here
