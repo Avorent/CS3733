@@ -26,7 +26,7 @@ Group 6 is one of the groups with randomly assigned students from the course who
 
 ### Teaching Instructor
 <p align="center"><img align="center" width="150" height="150" src="https://www.wpi.edu/sites/default/files/2017/09/28/dselent.jpg"></p>
-<p align="center"> Computer Science Professor Douglas Selent</p>
+<p align="center"><h6>Computer Science Professor Douglas Selent</h6></p>
 Doug Selent has worked with Neil Heffernan and the ASSISTments online tutoring system. His research has primarily been focused on several aspects related to large scale experimentation in online tutoring systems. He has developed a machine-learning algorithm to learn the incorrect processes students make from the students answer and the inputs of the problem and conducted several randomized controlled experiments in the ASSISTments system using this information to help students learn from their mistakes.
 
 ### Current Members of Group 6
