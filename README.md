@@ -7,10 +7,12 @@
 - [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 ***
 # Introduction
-This  course  is  an  introduction  to  Software  Engineering.   Students  will  work  in  teams  of  4-6 people to createaweb application using current standard frameworks.  The Java language will be used in this course and additional Java libraries related to web development. Over the course of this project students will experience the system design life cycle and cover several topics such as UML   modeling, system   architecture(layers),   common   design   patterns,   and   full-stack development.Thiscourse  will  consist of  sixassignmentsrelated  to  the  project  (project deliverables),and   a   final   exam   on   the   concepts   taught   in   the   course.All non-verbal communication will be done through WPIemail.
+This course is an introduction to Software Engineering. Students will work in teams ranging from four to six people to create a web application using current standard frameworks. The Java language will be used in this course and additional Java libraries related to web development. Over the course of this project students will experience the system design life cycle and cover several topics such as UML modeling, system architecture (layers), common design patterns, and full-stack development. This course will consist of six assignments related to the project (project deliverables), and a final exam on the concepts taught in the course.
+
+Our teaching instructor is professor Douglas Selent
 
 ## Current Members
-Checkmarks shows who have registered to this repository.
+###### Checkmarks show who have registered to this repository.
 - [x] [Panha Lau](https://github.com/Avorent)
 - [x] [Alex Antaya](https://github.com/aantaya1)
 - [x] [Josu Contreras](https://github.com/JosuContrer)
@@ -18,7 +20,9 @@ Checkmarks shows who have registered to this repository.
 - [x] [Javier Marcos](https://github.com/XBC30EP450)
 - [ ] [Robert Dutile](https://github.com/bdbooksrule)
 
+Our team coach will be one of the class' teaching assistants:
 
+Vanshaj Chowdhary
 
 ***
 # Miscellaneous
