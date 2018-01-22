@@ -65,7 +65,7 @@ http://www.omg.org/spec/UML/2.5/PDF
 ## Miscellaneous
 
 ### Members' Quotes
-Check out our team member's important messages to you all:
+Check out our team members' important message to you all:
 
 #### Javier:
 > Tonto el que lo lea
