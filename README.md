@@ -15,12 +15,12 @@ Our teaching instructor is professor Douglas Selent
 
 ## Current Members
 ###### Checkmarks show who have registered to this repository.
-- [x] [Panha Lau](https://github.com/Avorent)
-- [x] [Alex Antaya](https://github.com/aantaya1)
-- [x] [Josu Contreras](https://github.com/JosuContrer)
-- [x] [Dan DiIorio](https://github.com/drd387)
-- [x] [Javier Marcos](https://github.com/XBC30EP450)
+- [x] [Alexander Antaya](https://github.com/aantaya1)
+- [x] [Josue Contreras](https://github.com/JosuContrer)
+- [x] [Daniel DiIorio](https://github.com/drd387)
 - [ ] [Robert Dutile](https://github.com/bdbooksrule)
+- [x] [Panhavuth Lau](https://github.com/Avorent)
+- [x] [Javier Marcos](https://github.com/XBC30EP450)
 
 Our team coach will be one of the class' teaching assistants:
 
