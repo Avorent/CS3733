@@ -28,4 +28,7 @@ Check out our team member's important messages to you all:
 
 ### Javier:
 > Tonto el que lo lea
->
+### Josu:
+> hi again
+### Dan:
+> dan is here
