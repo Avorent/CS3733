@@ -3,7 +3,7 @@
 ## Table of Contents
 ### [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
 ### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
-- [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#)
+- [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 ***
 # Introduction
 
@@ -20,7 +20,7 @@ Checkmarks shows who have registered to this repository.
 ***
 # Miscellaneous
 
-## Members' quotes
+## Members' Quotes
 Check out our team member's important messages to you all:
 
 ### Javier:
