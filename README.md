@@ -1,7 +1,8 @@
 # CS3733 C-term Software Engineering
 ***
 
-## <details><summary>Table of Contents</summary>
+## Table of Contents
+<details><summary>Click here to show</summary>
   
 - [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
   - [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
