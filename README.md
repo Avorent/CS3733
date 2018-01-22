@@ -4,21 +4,24 @@
 ## Table of Contents
 <details><summary>Click here to expand</summary>
   
-- [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
+- [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction)
   - [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
-  
-- [References](https://github.com/Avorent/CS3733/blob/master/README.md#references-1)
 
-- [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
+- [Useful Resources](https://github.com/Avorent/CS3733/blob/master/README.md#useful-resources)
+
+- [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous)
   - [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 </details>
 
 ***
 
 ## Introduction
-Welcome to the GitHub repository of the team Group 6 in the WPI course Software Engineering.
+<p align="center"><img align="center" width="400" height="300"></p>
+Welcome to the GitHub repository of the team Group 6 of the Software Engineering course provided by Worcester Polytechnic Institute.
 
 This course is an introduction to Software Engineering. Students will work in teams ranging from four to six people to create a web application using current standard frameworks. The Java language will be used in this course and additional Java libraries related to web development. Over the course of this project students will experience the system design life cycle and cover several topics such as UML modeling, system architecture (layers), common design patterns, and full-stack development. This course will consist of six assignments related to the project (project deliverables), and a final exam on the concepts taught in the course.
+
+Group 6 is one of the groups with randomly assigned students from the course who must complete the assignments together in team-based projects.
 
 ### Teaching Instructor
 <p align="center"><img align="center" width="150" height="150" src="https://www.wpi.edu/sites/default/files/2017/09/28/dselent.jpg"></p>
