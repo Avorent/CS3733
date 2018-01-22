@@ -1,12 +1,20 @@
 # CS3733 C-term Software Engineering
 ***
+
 ## Table of Contents
-### [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
-- [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
-### [References](https://github.com/Avorent/CS3733/blob/master/README.md#references-1)
-### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
-- [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
+<details><summary>Click to expand</summary>
+  
+- [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
+  - [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
+  
+- [References](https://github.com/Avorent/CS3733/blob/master/README.md#references-1)
+
+- [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
+  - [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
+</details>
+
 ***
+
 ## Introduction
 Welcome to the GitHub repository of the team Group 6 in the WPI course Software Engineering.
 
