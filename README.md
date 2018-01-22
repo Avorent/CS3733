@@ -1,9 +1,9 @@
-# Group 6's Repository for CS3733 Software Engineering
+# CS3733 C-term Software Engineering
 ***
 ## Table of Contents
-### Introduction
-### Miscellaneous
-#### [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#group-6s-repository-for-cs3733-software-engineering)
+### [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
+### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
+#### [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#)
 ***
 # Introduction
 
