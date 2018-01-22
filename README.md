@@ -17,7 +17,8 @@
 
 ## Introduction
 <p align="center"><img align="center" width="400" height="300" src="https://www.wpi.edu/sites/default/files/inline-image/Offices/Marketing-Communications/WPI_Inst_Prim_FulClr.png"></p>
-Welcome to the GitHub repository of the team Group 6 of the Software Engineering course provided by Worcester Polytechnic Institute.
+
+###### Welcome to the GitHub repository of the team Group 6 of the Software Engineering course provided by Worcester Polytechnic Institute.
 
 This course is an introduction to Software Engineering. Students will work in teams ranging from four to six people to create a web application using current standard frameworks. The Java language will be used in this course and additional Java libraries related to web development. Over the course of this project students will experience the system design life cycle and cover several topics such as UML modeling, system architecture (layers), common design patterns, and full-stack development. This course will consist of six assignments related to the project (project deliverables), and a final exam on the concepts taught in the course.
 
