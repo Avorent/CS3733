@@ -5,7 +5,7 @@
 - [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members-of-group-6)
 ### [References](https://github.com/Avorent/CS3733/blob/master/README.md#references-1)
 ### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
-- [Member's Quotes](members-quotes)
+- [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 ***
 ## Introduction
 Welcome to the GitHub repository of the team Group 6 in the WPI course Software Engineering.
@@ -25,7 +25,7 @@ This course is an introduction to Software Engineering. Students will work in te
 - [x] [Javier Marcos](https://github.com/XBC30EP450)
 
 #### Our team coach will be one of the course' teaching assistants:
-[Vanshaj Chowdhary](#members-quotes)
+[Vanshaj Chowdhary](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 
 ***
 ## References
