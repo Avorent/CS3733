@@ -2,6 +2,7 @@
 ***
 ## Table of Contents
 ### [Introduction](https://github.com/Avorent/CS3733/blob/master/README.md#introduction-1)
+- [Current Members](https://github.com/Avorent/CS3733/blob/master/README.md#current-members)
 ### [Miscellaneous](https://github.com/Avorent/CS3733/blob/master/README.md#miscellaneous-1)
 - [Member's Quotes](https://github.com/Avorent/CS3733/blob/master/README.md#members-quotes)
 ***
@@ -16,6 +17,8 @@ Checkmarks shows who have registered to this repository.
 - [x] [Dan DiIorio](https://github.com/drd387)
 - [x] [Javier Marcos](https://github.com/XBC30EP450)
 - [ ] [Robert Dutile](https://github.com/bdbooksrule)
+
+
 
 ***
 # Miscellaneous
