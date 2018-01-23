@@ -68,8 +68,11 @@ http://www.omg.org/spec/UML/2.5/PDF
 Check out our team members' important message to you all:
 
 #### Javier:
-> Tonto el que lo lea
+> Hi name is javier
 #### Josue:
 > hi again
 #### Daniel:
 > dan is here
+#### Josue:
+> What up 
+> My name is Jeff
