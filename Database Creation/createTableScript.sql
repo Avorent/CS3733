@@ -18,6 +18,30 @@ CREATE TABLE user_states
 
 
 
+
+
+/*
+	user_roles: What the user's role in the system is. Will determine their privileges.
+	@Param id: This is the users ID (aka the primary key)
+	@Param is_instructor: Whetherof not the user is an instructor (TRUE=instructor, FALSE=Admin)
+	@Param created_at: timestamp
+	@Param updated_at: timestamp
+	@Param :
+	--course num and term need to be inherited
+*/
+CREATE TABLE user_roles
+(
+	id serial PRIMARY KEY,
+	is_instructor boolean NOT NULL,
+	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
+	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
+	deleted boolean NOT NULL DEFAULT(FALSE)
+);
+
+
+
+
+
 /*
 	Users: This will be the "master" table that holds all of the basic information about users.
 			Other tables related to users will probably reference this table. When an admin creates a user,
@@ -163,12 +187,12 @@ CREATE TABLE course_schedule
 	time_end integer NOT NULL,
 	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
 	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP)
-)
+);
 
 
 
 /*
-	link_course: This will be he table that links (registers) a specific instructor to a
+	link_course: This will be the table that links (registers) a specific instructor to a
 			specific couse section.
 	@Param id: This is the users ID (aka the primary key)
 	@Param instructor_id: The id of the instructor that registered for the course section. This will be taken from the instructors table.
@@ -182,10 +206,10 @@ CREATE TABLE link_course
 	id serial PRIMARY KEY,
 	instructor_id integer NOT NULL, --HAS TO REFERENCE
 	course_num varchar(255) NOT NULL, --HAS TO REFERENCE
-	section_num varchar(255) NOT NULL --HAS TO REFERENCE
+	section_num varchar(255) NOT NULL, --HAS TO REFERENCE
 	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
 	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP)
-)
+);
 
 CREATE UNIQUE INDEX users_user_name ON users(user_name);
 
@@ -217,26 +241,6 @@ CREATE TABLE users_history
 	salt varchar(255) NOT NULL,
 	user_state_id integer NOT NULL REFERENCES user_states(id),
 	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP)
-);
-
-
-
-/*
-	user_roles: What the user's role in the system is. Will determine their privileges.
-	@Param id: This is the users ID (aka the primary key)
-	@Param is_instructor: Whetherof not the user is an instructor (TRUE=instructor, FALSE=Admin)
-	@Param created_at: timestamp
-	@Param updated_at: timestamp
-	@Param :
-	--course num and term need to be inherited
-*/
-CREATE TABLE user_roles
-(
-	id serial PRIMARY KEY,
-	is_instructor boolean NOT NULL,
-	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
-	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
-	deleted boolean NOT NULL DEFAULT(FALSE),
 );
 
 
