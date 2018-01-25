@@ -116,6 +116,7 @@ CREATE TABLE course_information
 	course_num varchar(255) UNIQUE NOT NULL,
 	course_name varchar(255) UNIQUE NOT NULL,
 	class_type varchar(255) NOT NULL,
+	expected_pop integer NOT NULL,
 	level boolean NOT NULL,
 	dept varchar(255) NOT NULL,
 	num_sections integer NOT NULL
