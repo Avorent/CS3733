@@ -105,7 +105,7 @@ CREATE TABLE instructors
 	@Param course_name: Course name
 	@Param term: The taerm the course is taught
 	@Param expected_pop: Expected population of class (How many seats will be offered)
-	@Param type: The type of class (Lecture, Lab, Conference, etc.)
+	@Param class_type: The type of class (Lecture, Lab, Conference, etc.)
 	@Param level: The level of the course (Undergraduate=TRUE, Graduate=FALSE)
 	@Param dept: What department the course is taught in (CS, MA, RBE, etc.)
 	@Param num_sections: The number of sections that are offered for the course
@@ -115,7 +115,7 @@ CREATE TABLE course_information
 	id serial PRIMARY KEY,
 	course_num varchar(255) UNIQUE NOT NULL,
 	course_name varchar(255) UNIQUE NOT NULL,
-	type varchar(255) NOT NULL,
+	class_type varchar(255) NOT NULL,
 	level boolean NOT NULL,
 	dept varchar(255) NOT NULL,
 	num_sections integer NOT NULL
@@ -153,7 +153,7 @@ CREATE TABLE course_sections
 			it's own row.
 			EXAMPLE: MA 2621, Taught in C-Term. This will represent the lecture meeting times per week.
 			course_id=2621C01,
-			type=lecture,
+			class_type=lecture,
 			m=TRUE,
 			t=TRUE,
 			w=FALSE,
@@ -162,7 +162,7 @@ CREATE TABLE course_sections
 			time_start=0900,
 			time_end=1000,
 	@Param id: This is the course ID (aka the primary key)
-	@param type: This is the type of class. (Lecture, Lab, Conference, etc.). This will be taken from the parent table (course_information).
+	@param class_type: This is the type of class. (Lecture, Lab, Conference, etc.). This will be taken from the parent table (course_information).
 	@Param m: Monday (Meets on this day=True, Does NOT meet on this day=False)
 	@Param t: Tuesday (Meets on this day=True, Does NOT meet on this day=False)
 	@Param w: Wednesday (Meets on this day=True, Does NOT meet on this day=False)
@@ -178,7 +178,7 @@ CREATE TABLE course_schedule
 (
 	id serial PRIMARY KEY,
 	course_id integer NOT NULL REFERENCES course_sections(id), --HAS TO REFERENCE course_sections in some way
-	type varchar(255) NOT NULL,
+	class_type varchar(255) NOT NULL,
 	m boolean NOT NULL,
 	t boolean NOT NULL,
 	w boolean NOT NULL,
