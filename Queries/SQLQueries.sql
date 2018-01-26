@@ -119,3 +119,39 @@ AND (sc.meeting_days = ? OR ? = 'false')
 
 
 ORDER BY se.id ASC;
+
+------------------------NEW
+--5 Registration Cart
+SELECT 
+ci.course_name
+
+FROM course_information ci
+WHERE ci.course_num = (
+  SELECT cs.course_num
+  FROM course_sections cs
+  WHERE cs.section_num = (
+    SELECT ic.section_id
+    FROM instructor_course_link_cart ic
+    WHERE ic.instructor_id = x
+  )
+)
+ORDER BY ci.course_name ASC;
+
+--6 For Schedule (NOT DONE)
+SELECT 
+ci.course_name,
+ci.dept,
+cs.section_num,
+
+FROM course_information ci
+LEFT OUTER JOIN course_sections cs
+ON ci.course_num = cs.course_num
+LEFT OUTER JOIN course_schedule ch
+ON cs.course_num = ch.course_id
+WHERE cs.section_num IN 
+(
+  SELECT section_id
+  FROM instructor_course_link_registered
+  WHERE instructor_id = x
+)
+)
