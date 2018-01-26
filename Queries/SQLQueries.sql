@@ -122,7 +122,7 @@ ORDER BY se.id ASC;
 
 ------------------------NEW
 --5 Registration Cart
-SELECT 
+SELECT
 ci.course_name
 
 FROM course_information ci
@@ -132,26 +132,46 @@ WHERE ci.course_num = (
   WHERE cs.section_num = (
     SELECT ic.section_id
     FROM instructor_course_link_cart ic
-    WHERE ic.instructor_id = x
+    WHERE ic.instructor_id = ?
   )
 )
 ORDER BY ci.course_name ASC;
 
---6 For Schedule (NOT DONE)
-SELECT 
+--6 For Schedule (to Josue: Is this done?) (I made the code work, and it shows 3 columns, but I'm not sure if this is the amount we need)
+SELECT
 ci.course_name,
 ci.dept,
-cs.section_num,
+cs.section_num
 
 FROM course_information ci
 LEFT OUTER JOIN course_sections cs
 ON ci.course_num = cs.course_num
 LEFT OUTER JOIN course_schedule ch
-ON cs.course_num = ch.course_id
-WHERE cs.section_num IN 
+ON cs.section_num = ch.section_id
+WHERE cs.section_num IN
 (
   SELECT section_id
   FROM instructor_course_link_registered
-  WHERE instructor_id = x
+  WHERE instructor_id = ?
 )
-)
+
+-- 7 Account Information
+
+SELECT
+users.user_name,
+users.first_name,
+users.last_name,
+users.email,
+users.phone_num,
+users.secondary_email,
+ins.req_courses,
+(ins.req_courses - registered_req_courses) AS remaining
+
+FROM instructors ins
+LEFT OUTER JOIN users
+ON ins.user_id = users.id
+LEFT OUTER JOIN
+(SELECT COUNT(instructor_id) AS registered_req_courses
+ FROM instructor_course_link_registered) AS registered_req_courses
+ON ins.user_id = users.id
+WHERE instructor_id = ?
