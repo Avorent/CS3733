@@ -16,7 +16,7 @@ LEFT JOIN course_schedule sc
 ON se.id = sc.section_id
 LEFT JOIN course_information ci
 ON se.course_num = ci.course_num
-LEFT JOIN instructor_course_link_cart cart
+LEFT JOIN instructor_course_link_registered cart
 ON se.id = cart.section_id
 WHERE se.id
 IN(
@@ -29,7 +29,6 @@ IN(
     WHERE user_id = ?
   )
 )
-AND (cart.status = 1)
 ORDER BY se.id ASC;
 
 -- SIMILAR
@@ -58,6 +57,7 @@ IN(
     WHERE user_id = ?
   )
 )
+AND (se.deleted = 'true')
 AND (cart.status = 0)
 ORDER BY se.id ASC;
 
@@ -69,14 +69,14 @@ SELECT
 se.expected_pop,
 sc.meeting_days,
 ci.course_num, ci.course_name,
-cart.status
+se.deleted
 
 FROM course_sections se
 LEFT JOIN course_schedule sc
 ON se.id = sc.section_id
 LEFT JOIN course_information ci
 ON se.course_num = ci.course_num
-LEFT JOIN instructor_course_link_cart cart
+LEFT JOIN instructor_course_link_registered cart
 ON se.id = cart.section_id
 WHERE se.id
 IN(
@@ -100,7 +100,7 @@ SELECT
 se.expected_pop,
 sc.meeting_days,
 ci.course_num, ci.course_name,
-cart.status
+se.deleted
 
 FROM course_sections se
 LEFT JOIN course_schedule sc
@@ -122,7 +122,7 @@ SELECT
 se.expected_pop, se.term,
 sc.meeting_days,
 ci.course_num, ci.course_name,
-cart.status
+se.deleted
 
 FROM course_sections se
 LEFT JOIN course_schedule sc
@@ -144,7 +144,7 @@ ORDER BY se.id ASC;
 
 
 -- 5) Registration Cart
--- Displays the name of the courses in the cart that have a staus of 
+-- Displays the name of the courses in the cart that have a status of 
 -- 'registered'.
 SELECT
 ci.course_name
@@ -168,26 +168,31 @@ ORDER BY ci.course_name ASC;
 SELECT
 ci.course_name,
 ci.dept,
-cs.section_num,
-ch.meeting_days,
-ch.time_start,
-ch.time_end
+se.section_num,
+sc.meeting_days,
+sc.time_start,
+sc.time_end
 
-FROM course_information ci
-LEFT OUTER JOIN course_sections cs
-ON ci.course_num = cs.course_num
-LEFT OUTER JOIN course_schedule ch
-ON cs.section_num = ch.section_id
-WHERE cs.section_num IN
-(
+FROM course_sections se
+LEFT JOIN course_schedule sc
+ON se.id = sc.section_id
+LEFT JOIN course_information ci
+ON se.course_num = ci.course_num
+LEFT JOIN instructor_course_link_registered cart
+ON se.id = cart.section_id
+WHERE se.id
+IN(
   SELECT section_id
   FROM instructor_course_link_registered
-  WHERE instructor_id = ?
+  WHERE instructor_id
+  IN(
+    SELECT id
+    FROM instructors
+    WHERE user_id = ?
+  )
 )
-AND
-( 
-  ci.course_num = cs.course_num
-)
+AND (ci.course_num = se.course_num)
+ORDER BY ci.course_name ASC;
 
 
 -- 7) Account Information 
@@ -209,7 +214,8 @@ FROM instructors ins
 LEFT OUTER JOIN users
 ON ins.user_id = users.id
 LEFT OUTER JOIN
-(SELECT COUNT(instructor_id) AS registered_req_courses
- FROM instructor_course_link_registered) AS registered_req_courses
+(SELECT COUNT(reg.instructor_id) AS registered_req_courses
+ FROM instructors ins, instructor_course_link_registered reg
+ WHERE ins.user_id = reg.instructor_id) AS registered_req_courses
 ON ins.user_id = users.id
 WHERE instructor_id = ?
