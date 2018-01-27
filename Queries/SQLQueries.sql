@@ -1,14 +1,23 @@
----
---- 1) (user homepage) Selects all information about the registered courses for the instructor's homepage.
+--- Advanced Queries
+--- Last updated: Jan. 26, 2018; Time: 7pm
+--- Group 6
+
+
+-- 1) User Homepage
+-- Registered Query: Displays the courses names, course numbers
+-- and meeting days where the instructor is registered in.
 SELECT
-sc.meeting_days,
-ci.course_num, ci.course_name
+ci.course_name,
+ci.course_num,
+sc.meeting_days
 
 FROM course_sections se
 LEFT JOIN course_schedule sc
 ON se.id = sc.section_id
 LEFT JOIN course_information ci
 ON se.course_num = ci.course_num
+LEFT JOIN instructor_course_link_cart cart
+ON se.id = cart.section_id
 WHERE se.id
 IN(
   SELECT section_id
@@ -17,23 +26,27 @@ IN(
   IN(
     SELECT id
     FROM instructors
-    WHERE user_id = 15
+    WHERE user_id = ?
   )
 )
+AND (cart.status = 1)
 ORDER BY se.id ASC;
 
---SIMILAR
--- Selects all information about the pending courses for the instructor's homepage.
-
+-- SIMILAR
+-- Cart Query: Displays the courses names, course numbers
+-- and meeting days where the instructor has a pending status.
 SELECT
-sc.meeting_days,
-ci.course_num, ci.course_name
+ci.course_name,
+ci.course_num,
+sc.meeting_days
 
 FROM course_sections se
 LEFT JOIN course_schedule sc
 ON se.id = sc.section_id
 LEFT JOIN course_information ci
 ON se.course_num = ci.course_num
+LEFT JOIN instructor_course_link_cart cart
+ON se.id = cart.section_id
 WHERE se.id
 IN(
   SELECT section_id
@@ -42,13 +55,16 @@ IN(
   IN(
     SELECT id
     FROM instructors
-    WHERE user_id = 15
+    WHERE user_id = ?
   )
 )
+AND (cart.status = 0)
 ORDER BY se.id ASC;
 
--- 2 (View classes)
 
+-- 2) View Classes
+-- Displays detailed class information to the user for the
+-- classes they have been linked for (registered apporved). 
 SELECT
 se.expected_pop,
 sc.meeting_days,
@@ -70,13 +86,16 @@ IN(
   IN(
     SELECT id
     FROM instructors
-    WHERE user_id = 15
+    WHERE user_id = ?
   )
 )
 ORDER BY se.id ASC;
 
--- 3 (Search classes)
 
+-- 3) Search Classes
+-- A fast search for classes by: 
+-- excpected popultaion, meeting days, course number, course name
+-- and course status. 
 SELECT
 se.expected_pop,
 sc.meeting_days,
@@ -94,8 +113,11 @@ WHERE (term = ? OR ? = 'false') -- need more than 1 for semester
 AND (ci.dept = ? OR ? = 'false')
 ORDER BY se.id ASC;
 
--- 4 (Search (Detailed))
 
+-- 4) Advanced Search (Detailed)
+-- A advanced search for the user to find classes by:
+-- expected population, term, meeting days, course number,
+-- course name and course status. All these fields are optional.
 SELECT
 se.expected_pop, se.term,
 sc.meeting_days,
@@ -120,8 +142,10 @@ AND (sc.meeting_days = ? OR ? = 'false')
 
 ORDER BY se.id ASC;
 
-------------------------NEW
---5 Registration Cart
+
+-- 5) Registration Cart
+-- Displays the name of the courses in the cart that have a staus of 
+-- 'registered'. 
 SELECT
 ci.course_name
 
@@ -137,11 +161,17 @@ WHERE ci.course_num = (
 )
 ORDER BY ci.course_name ASC;
 
---6 For Schedule (to Josue: Is this done?) (I made the code work, and it shows 3 columns, but I'm not sure if this is the amount we need)
+
+-- 6) Course Schedule information
+-- Shows the courses information for schedule viewing includes:
+-- course name, department, section number, meeting days and time
 SELECT
 ci.course_name,
 ci.dept,
-cs.section_num
+cs.section_num,
+ch.meeting_days,
+ch.time_start,
+ch.time_end
 
 FROM course_information ci
 LEFT OUTER JOIN course_sections cs
@@ -154,8 +184,16 @@ WHERE cs.section_num IN
   FROM instructor_course_link_registered
   WHERE instructor_id = ?
 )
+AND
+( 
+  ci.course_num = cs.course_num
+)
 
--- 7 Account Information
+
+-- 7) Account Information 
+-- Shows the user's username, first and last name, email and/or secondary email,
+-- phone number (optional), and required minimum courses (if they have filled their 
+-- requirement, it will show up as 0)
 
 SELECT
 users.user_name,
