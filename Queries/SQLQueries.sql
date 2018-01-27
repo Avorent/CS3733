@@ -145,7 +145,7 @@ ORDER BY se.id ASC;
 
 -- 5) Registration Cart
 -- Displays the name of the courses in the cart that have a staus of 
--- 'registered'. 
+-- 'registered'.
 SELECT
 ci.course_name
 

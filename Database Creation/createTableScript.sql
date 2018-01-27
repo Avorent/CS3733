@@ -15,8 +15,6 @@ CREATE TABLE user_states
 
 
 
-
-
 /*
 	user_roles: What the user's role in the system is. Will determine their privileges.
 	@Param id: This is the users ID (aka the primary key)
@@ -35,8 +33,6 @@ CREATE TABLE user_roles
 
 
 
-
-
 /*
 	Users: This will be the "master" table that holds all of the basic information about users.
 			Other tables related to users will probably reference this table. When an admin creates a user,
@@ -51,7 +47,8 @@ CREATE TABLE user_roles
 	@Param encrypted_password: Password for the user
 	@Param salt: Used for the password encryption integrity
 	@Param user_role: Whether or not they are an admin: 0 - not an admin, 1 - admin
-	@Param user_state_id: Not sure... Will ask professor*************
+	@Param user_state_id: This is whether or not a user has been deleted
+	@param admin_inbox: This is a link to the admin inbox. Only users that are admins will be able to access this inbox(this will be done through Java).
 	@Param created_at: timestamp
 	@Param updated_at: timestamp
 	Note:
@@ -75,6 +72,7 @@ CREATE TABLE users
 );
 
 
+
 /*
 users_history: This will keep record of a user's history.
 	@Param id: This is the users ID (aka the primary key)
@@ -85,7 +83,7 @@ users_history: This will keep record of a user's history.
 	@Param email: Email of the user
 	@Param encrypted_password: Password for the user
 	@Param salt: Used for the password encryption integrity
-	@Param user_state_id: Not sure... Will ask professor*************
+	@Param user_state_id: This is whether or not a user has been deleted
 	@Param created_at: timestamp
 	--course num and term need to be inherited
 */
@@ -155,16 +153,27 @@ CREATE TABLE instructors
 	@Param level: The level of the course (Undergraduate=TRUE, Graduate=FALSE)
 	@Param dept: What department the course is taught in (CS, MA, RBE, etc.)
 	@Param num_sections: The number of sections that are offered for the course
+	@Param req_frequency: This is an encoded tag. With the first letter denoting the years it's offered and the 
+			next 5 digits will represent the terms it's offered. Encoded as follows:
+			A00000
+			1st Letter: Can be an A or a B. A=Every year, B=Every other year
+			1st Number: A ONE if its offered this term (A-Term). A ZERO if not.
+			2st Number: A ONE if its offered this term (B-Term). A ZERO if not.
+			3st Number: A ONE if its offered this term (C-Term). A ZERO if not.
+			4st Number: A ONE if its offered this term (D-Term). A ZERO if not.
+			5st Number: A ONE if its offered this term (E-Term). A ZERO if not.
 */
 CREATE TABLE course_information
 (
 	id serial PRIMARY KEY,
-	course_num varchar(255) UNIQUE NOT NULL,
+	course_num varchar(255) NOT NULL,
 	course_name varchar(255) UNIQUE NOT NULL,
 	type varchar(255) NOT NULL,
 	level boolean NOT NULL,
 	dept varchar(255) NOT NULL,
-	num_sections integer NOT NULL
+	num_sections integer NOT NULL,
+	req_frequency integer NOT NULL,
+	UNIQUE(dept, course_num)
 );
 
 
@@ -184,13 +193,15 @@ CREATE TABLE course_information
 CREATE TABLE course_sections
 (
 	id serial PRIMARY KEY,
-	course_num varchar(255) NOT NULL REFERENCES course_information(course_num), --HAS TO REFERENCE
+	course_num varchar(255) NOT NULL,
+	dept varchar(255) NOT NULL,
 	section_num integer NOT NULL, --automatically generated on the front end (user inputs amount of sections, app generates numbers for each one, ex: 01, 02, 03)
 	term varchar(5) NOT NULL,
 	expected_pop integer NOT NULL,
 	deleted boolean NOT NULL DEFAULT(FALSE),
 	created_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
-	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP)
+	updated_at timestamp with time zone NOT NULL DEFAULT(CURRENT_TIMESTAMP),
+	FOREIGN KEY (course_num, dept) REFERENCES course_information (course_num, dept)
 );
 
 
@@ -205,7 +216,7 @@ CREATE TABLE course_sections
 			time_start=0900,
 			time_end=1000,
 	@Param id: This is the course ID (aka the primary key)
-	@param type: This is the type of class. (Lecture, Lab, Conference, etc.). This will be taken from the parent table (course_information).
+	@Param type: This is the type of class. (Lecture, Lab, Conference, etc.). This will be taken from the parent table (course_information).
 	@Param m: Monday (Meets on this day=True, Does NOT meet on this day=False)
 	@Param t: Tuesday (Meets on this day=True, Does NOT meet on this day=False)
 	@Param w: Wednesday (Meets on this day=True, Does NOT meet on this day=False)
@@ -216,7 +227,6 @@ CREATE TABLE course_sections
 	@Param created_at: timestamp
 	@Param updated_at: timestamp
 */
---make sure time works as is or if it needs to be changed
 CREATE TABLE course_schedule
 (
 	id serial PRIMARY KEY,
@@ -252,6 +262,7 @@ CREATE TABLE instructor_course_link_registered
 );
 
 
+
 /*
 	instructor_course_link_cart: This will be the table that links (registers) a specific instructor to a
 			specific couse section.
@@ -276,10 +287,6 @@ CREATE UNIQUE INDEX users_user_name ON users(user_name);
 
 
 
-
-
-
-
 /*
 	admin_inbox: This is the table that will work as the [shared] inbox for all admins in the system.
 	@Param id: Primary key.
@@ -294,6 +301,7 @@ CREATE UNIQUE INDEX users_user_name ON users(user_name);
 CREATE TABLE admin_inbox
 (
 	id serial PRIMARY KEY,
+	inbox_user integer NOT NULL REFERENCES users(id),
 	sender integer NOT NULL,
 	subject_line varchar(255) NOT NULL,
 	content varchar(1027) NOT NULL,
