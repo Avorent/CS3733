@@ -21,4 +21,4 @@ LEFT OUTER JOIN
  FROM instructors ins, instructor_course_link_registered reg
  WHERE ins.user_id = reg.instructor_id) AS registered_req_courses
 ON ins.user_id = users.id
-WHERE instructor_id = ?
+WHERE ins.id = ?

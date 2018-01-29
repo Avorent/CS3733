@@ -15,8 +15,12 @@ LEFT JOIN course_information ci
 ON se.course_num = ci.course_num
 LEFT JOIN instructor_course_link_cart cart
 ON se.id = cart.section_id
+LEFT JOIN course_department_link cdl
+ON ci.id = cdl.course_id
+LEFT JOIN departments dept
+ON cdl.dept_id = dept.id
 WHERE (se.term = ? OR ? = 'false') -- need more than 1 for semester
-AND (ci.dept = ? OR ? = 'false')
+AND (dept.dept_name = ? OR ? = 'false')
 AND (se.expected_pop > ? OR se.expected_pop < ? 'false')
 AND (ci.type = ? OR ? = 'false')
 AND (sc.type = ? OR ? = 'false')
